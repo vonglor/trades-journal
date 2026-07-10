@@ -96,7 +96,7 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
             'search_path' => 'public',
-            'sslmode' => env('require'),
+            'sslmode' => env('require'),   //sfdslfkjslfjdslk
         ],
  
         'sqlsrv' => [
