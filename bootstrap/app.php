@@ -18,9 +18,15 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'role' => \App\Http\Middleware\CheckRole::class,
         ]);
+
+        // 🎯 ໃສ່ຄຳສັ່ງນີ້ເພີ່ມເຂົ້າໄປ ເພື່ອແກ້ບັກ ERR_CONNECTION_CLOSED ເທິງ Render
+        $middleware->trustProxies(at: '*');
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
             fn (Request $request) => $request->is('api/*'),
         );
     })->create();
+
+
+    
