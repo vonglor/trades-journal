@@ -22,8 +22,6 @@ return Application::configure(basePath: dirname(__DIR__))
         // 🎯 ໃສ່ຄຳສັ່ງນີ້ເພີ່ມເຂົ້າໄປ ເພື່ອແກ້ບັກ ERR_CONNECTION_CLOSED ເທິງ Render
         $middleware->trustProxies(at: '*');
         
-        // ຖ້າມີການເອີ້ນໃຊ້ລະບົບ CORS ພາຍໃນ ໃຫ້ບັງຄັບອະນຸຍາດ Origin
-        $middleware->statefulApi();
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
